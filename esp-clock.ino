@@ -13,11 +13,12 @@
 #define PASSWORD "Your password"
 #define APIKEY "Your API key"
 #define ZIPCODE "Your ZIP code"
+#define TIMEOFFSET "Your time offset"
 
 SSD1306 display(0x3c, 0, 2);
 HTTPClient http;
 WiFiUDP ntpUDP;
-NTPClient timeClient(ntpUDP, "pool.ntp.org", 2*3600);
+NTPClient timeClient(ntpUDP, "pool.ntp.org", TIMEOFFSET*3600);
 OneWire oneWire(3);
 DallasTemperature sensors(&oneWire);
 String temp;
